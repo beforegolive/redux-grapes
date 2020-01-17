@@ -1,3 +1,3 @@
-import { createAction } from './core/actionHelper'
+import { createActions } from './core/actionHelper'
 
-export default createAction
+export default createActions
