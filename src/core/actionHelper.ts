@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions'
-import { isFunction } from './utils/index'
+import { isFunction } from '../utils/index'
 
 const actionMap = {}
 
