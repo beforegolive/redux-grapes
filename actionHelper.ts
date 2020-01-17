@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions'
-import _ from 'lodash'
+import { isFunction } from './utils/index'
 
 const actionMap = {}
 
@@ -11,7 +11,7 @@ export const createActions = <T extends { [key: string]: Function, }>(
     [K in Extract<keyof T, string>]: any
   } = {} as any
   Object.keys(obj).forEach(e => {
-    if (_.isFunction(obj[e])) {
+    if (isFunction(obj[e])) {
       if (actionMap.hasOwnProperty(e)) {
         throw new Error(`action - '${e}' is duplicated`)
       } else {
