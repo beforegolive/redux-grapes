@@ -1,15 +1,22 @@
 {
   "name": "redux-saga-action",
   "version": "0.8.3",
-  "description": "",
-  "main": "index.js",
+  "description": "An action creator for redux-saga",
+  "keywords": [
+    "react",
+    "react-redux",
+    "redux",
+    "redux-saga",
+    "redux-saga-action"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.15",
+  "peerDependencies": {
     "redux-actions": "^2.6.5"
   }
 }
