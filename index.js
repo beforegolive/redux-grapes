@@ -1,3 +1,5 @@
 import { createActions } from './core/actionHelper'
+import { createReducers } from './core/reducerHelper'
+import sagaPromiseMiddleware from './core/sagaPromiseMiddleware'
 
-export default createActions
+export { createActions, createReducers, sagaPromiseMiddleware }
