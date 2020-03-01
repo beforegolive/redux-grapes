@@ -2,10 +2,22 @@ import { createAction } from 'redux-actions'
 
 const actionMap = {}
 
-export const createActions = <T extends { [key: string]: Function, }>(
+
+/**
+ * create actions helper tool.
+ *
+ * @template T { actionName1: (name)=> return { name } }
+ * @param {T} obj { property: function}
+ * @param {string} [prefix=''] set type of all actions with a prefix
+ * @returns 
+ * {
+ *  actionName1: function(name){ return { type: "actionName1", payload: { name }}
+ * }
+ */
+function createActions<T extends { [key: string]: Function}>(
   obj: T,
   prefix: string = ''
-) => {
+){
   const objProxy: {
     [K in Extract<keyof T, string>]: any
   } = {} as any
@@ -47,15 +59,6 @@ export const createActions = <T extends { [key: string]: Function, }>(
   return objProxy
 }
 
-// export const showActionsRefState = () => {
-//   const unusedActions = []
-//   Object.keys(actionMap).forEach(name => {
-//     if (actionMap[name] !== 1) {
-//       unusedActions.push(name)
-//     }
-//   })
+export { createActions }
 
-//   if (unusedActions.length > 0) {
-//     console.warn('currently, the unused actions are:', unusedActions)
-//   }
-// }
+export default createActions

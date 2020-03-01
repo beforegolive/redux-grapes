@@ -1,6 +1,6 @@
 {
   "name": "redux-saga-promise-action",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "description": "An action creator for redux-saga",
   "keywords": [
     "react",
@@ -16,11 +16,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "redux-actions": "^2.6.5"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
   }
 }
