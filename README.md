@@ -41,6 +41,7 @@ export default createReducers(on => {
 ### 创建对应的saga
 
 创建saga来处理saga后缀的action (actionTestSaga)
+
 ```
 mport { SagaIterator } from 'redux-saga'
 import { takeLatest, put } from 'redux-saga/effects'
@@ -58,13 +59,14 @@ export function* actionTest1(): SagaIterator {
 
 
 ### 配置redux中间件
+
 配置对应中间件将action转换为promise的中间件。
 
 ```
 import createSagaMiddleware from 'redux-saga'
 import { sagaPromiseMiddleware } from 'redux-saga-promise-action'
 
-...
+……
 
 const middlewares = [
   sagaPromiseMiddleware,
@@ -73,7 +75,8 @@ const middlewares = [
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares))
 
-...
+……
+
 ```
 
 
