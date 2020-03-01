@@ -1,5 +1,5 @@
 {
-  "name": "redux-saga-action",
+  "name": "redux-saga-promise-action",
   "version": "0.8.7",
   "description": "An action creator for redux-saga",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/twomeetings/redux-saga-action"
+    "url": "https://github.com/twomeetings/redux-saga-promise-action"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
