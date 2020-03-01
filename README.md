@@ -20,7 +20,7 @@ export default createActions({
 创建reducer处理对应的action，此例中为处理actionIdTest：
 
 ```
-import { createReducers } from 'redux-saga-action'
+import { createReducers } from 'redux-saga-promise-action'
 import appActions from '../actions/appActions'
 
 const initialState = {
