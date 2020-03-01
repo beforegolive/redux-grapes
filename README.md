@@ -1,6 +1,6 @@
 # redux-saga-promise-action
 
-### 创建actions。
+### 创建actions
 创建3个action分别为actionIdTest，actionNoParamTest，actionTestSaga，其中第一个action包含参数id。
 所有的action的type都包含前缀PREFIX。
 
@@ -16,9 +16,10 @@ export default createActions({
 ```
 
 
-### 创建reducers。
+### 创建reducers
 创建reducer处理对应的action，此例中为处理actionIdTest：
 
+```
 import { createReducers } from 'redux-saga-action'
 import appActions from '../actions/appActions'
 
