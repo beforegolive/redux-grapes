@@ -1,26 +1,31 @@
 import { isInLocal } from '../utils'
 
-const initAppFinishedPromiseHandler = {}
+type PromiseHandler = {
+  resolve?: ()=>void,
+  reject?: ()=>void
+}
+
+const initAppFinishedPromiseHandler: PromiseHandler = {}
 const initAppFinishedPromise = new Promise((resolve, reject) => {
 	initAppFinishedPromiseHandler.resolve = resolve
 	initAppFinishedPromiseHandler.reject = reject
 })
 
-const initFirstActionsFinishedPromiseHandler = {}
+const initFirstActionsFinishedPromiseHandler: PromiseHandler = {}
 // 用于hold住其他saga，等待initSagasWhenAppStarted中优先级最高的saga列表执行完毕
 const initFirstActionsFinishedPromise = new Promise((resolve, reject) => {
 	initFirstActionsFinishedPromiseHandler.resolve = resolve
 	initFirstActionsFinishedPromiseHandler.reject = reject
 })
 
-const initSecondActionsFinishedPromiseHandler = {}
+const initSecondActionsFinishedPromiseHandler: PromiseHandler = {}
 // 用于hold住非saga优先级列表的其他saga，执行优先级低于initSagasWhenAppStarted中firstSaga列表，高于其他saga
 const initSecondActionsFinishedPromise = new Promise((resolve, reject) => {
 	initSecondActionsFinishedPromiseHandler.resolve = resolve
 	initSecondActionsFinishedPromiseHandler.reject = reject
 })
 
-const initThirdActionsFinishedPromiseHandler = {}
+const initThirdActionsFinishedPromiseHandler: PromiseHandler = {}
 // 优先级低于第一和第二，但高于其他saga
 // 当前项目中需要第三优先级saga的业务场景：用户之间跳到优惠券列表页。
 // 1. 先获取openId和unionId
