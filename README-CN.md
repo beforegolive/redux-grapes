@@ -1,11 +1,11 @@
-# redux-saga-promise-action
+# redux-grapes
 
 ### 创建actions。
 创建3个action分别为actionIdTest，actionNoParamTest，actionTestSaga，其中第一个action包含参数id。
 所有的action的type都包含前缀PREFIX。
 
 ```
-import { createActions } from 'redux-saga-promise-action'
+import { createActions } from 'redux-grapes'
 
 export default createActions({
   actionIdTest: id => ({ id }),
@@ -62,7 +62,7 @@ export function* actionTest1(): SagaIterator {
 
 ```
 import createSagaMiddleware from 'redux-saga'
-import { sagaPromiseMiddleware } from 'redux-saga-promise-action'
+import { sagaPromiseMiddleware } from 'redux-grapes'
 
 ...
 
