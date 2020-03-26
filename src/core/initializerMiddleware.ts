@@ -74,12 +74,10 @@ export function initSagasWhenAppStarted(firstActions, secondActions = [], thirdA
 	firstActionArr = firstActionArr.concat(tempFirstActionArr)
 	secondActionArr = secondActionArr.concat(tempSecondActionArr)
 	thirdActionArr = thirdActionArr.concat(tempThirdActionArr)
-	initAppFinishedPromiseHandler.resolve()
-	console.warn('** initalizerMiddleware.initSagasWhenAppStarted执行完毕 **')
-}
-
-if (isInLocal()) {
-	console.warn('*** 初始化时记得执行initSagasWhenAppStarted方法, 保证部分saga在应用初始化时优先执行 ***')
+  initAppFinishedPromiseHandler.resolve()
+  if (isInLocal()) {
+    console.warn('** initalizerMiddleware.initSagasWhenAppStarted执行完毕 **')
+  }
 }
 
 export default ({ dispatch }) => next => async action => {
