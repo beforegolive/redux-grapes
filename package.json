@@ -1,7 +1,7 @@
 {
   "name": "redux-saga-promise-action",
   "version": "0.8.8",
-  "description": "An action creator for redux-saga",
+  "description": "An promise-action creator for redux-saga",
   "keywords": [
     "react",
     "react-redux",
